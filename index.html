@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="images/favicon-32x32.png" alt="">
+    <title>Multi step form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="form-container">
+                <div class="sidebar">
+                    <img src="images/bg-sidebar-desktop.svg" alt="" class="sidebar-desktop">
+                    <img src="images/bg-sidebar-mobile.svg" alt="" class="sidebar-mobile">
+                    <div class="sidebar-step">
+                        <div class="steps step1">
+                            <div class="count count1 active">1</div>
+                            <div class="count-text count-text1"><span class="text1">STEP 1</span><span class="text2">YOUR INFO</span></div>
+                        </div>
+                        <div class="steps step2">
+                            <div class="count count2">2</div>
+                            <div class="count-text count-text1"><span class="text1">STEP 2</span><span class="text2">SELECT PLAN</span></div>
+                        </div>
+                        <div class="steps step3">
+                            <div class="count count3">3</div>
+                            <div class="count-text count-text1"><span class="text1">STEP 3</span><span class="text2">ADD-ONS</span></div>
+                        </div>
+                        <div class="steps step4">
+                            <div class="count count4">4</div>
+                            <div class="count-text count-text1"><span class="text1">STEP 4</span><span class="text2">SUMMARY</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- first form -->
+                <div class="form-box form-box1 active">
+                    <h3>Personal info</h3>
+                    <p>Please provide your name, email address, and phone number.</p>
+                    <label for="" class="label-name">Name</label>
+                    <label for="" class="error name-error">This field is required</label>
+                    <input type="text" placeholder="e.g.Stephen King" class="input input-name">
+
+                    <label for="">Email Address</label>
+                    <label for="" class="error mail-error">This field is required</label>
+                    <input type="text" placeholder="e.g.StephenKing@lorem.com" class="input input-mail">
+
+                    <label for="">Phone Number</label>
+                    <label for="" class="error number-error">This field is required</label>
+                    <input type="text" placeholder="e.g.+1 234 567 890" class="input input-number">
+
+                    <div class="btn-next1">
+                        Next Step
+                    </div>
+                </div>
+                
+                <!-- second form -->
+                <div class="form-box form-box2">
+                    <h3>Select your plan</h3>
+                    <p>You have the option of monthly or yearly billing</p>
+                    <div class="grid">
+                        <div class="arcade plan-box">
+                            <div class="img-box">
+                                <img src="images/icon-arcade.svg" alt="" class="img">
+                            </div>
+                            <div class="content-box">
+                                <p>Arcade<span class="amount1">$9/mo</span><span class="free free1">2 months free</span></p>
+                            </div>
+                        </div>
+    
+                        <div class="advanced plan-box">
+                            <div class="img-box">
+                                <img src="images/icon-advanced.svg" alt="" class="img">
+                            </div>
+                            <div class="content-box">
+                                <p>Advanced<span class="amount2">$12/mo</span><span class="free free2">2 months free</span></p>
+                            </div>
+                        </div>
+    
+                        <div class="pro plan-box">
+                            <div class="img-box">
+                                <img src="images/icon-pro.svg" alt="" class="img">
+                            </div>
+                            <div class="content-box">
+                                <p>Pro<span class="amount3">$15/mo</span><span class="free free3">2 months free</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-container">
+                        <span class="duration1">Monthly</span><div class="toggle-box"><div class="toggle active"></div></div><span class="duration2">Yearly</span>
+                    </div>
+
+                    <div class="btns">
+                        <div class="go-back go-back1">
+                            Go back
+                        </div>
+                        <div class="btn-next btn-next2">
+                            Next Step
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- third form -->
+                <div class="form-box form-box3">
+                    <h3>Pick add-ons</h3>
+                    <p>Add-ons helps enhance your gaming experience</p>
+                    <div class="add-ons3 plan-box online1">
+                        <div class="img-box">
+                           <input type="checkbox" id="check1" class="check">
+                        </div>
+                        <div class="content-box">
+                            <p class="txt1">Online services<span>Access to multiplayer games</span></p>
+                        </div>
+                        <div class="check-price check-price1">
+                            +$1/mo
+                         </div>
+                    </div>
+
+                    <div class="add-ons3 plan-box larger2">
+                        <div class="img-box">
+                            <input type="checkbox" id="check2" class="check">
+                        </div>
+                        <div class="content-box">
+                            <p class="txt2">Larger storage<span>Extra 1TB of cloud save</span></p>
+                        </div>
+                        <div class="check-price check-price2">
+                            +$2/mo
+                        </div>
+                    </div>
+
+                    <div class="add-ons3 plan-box customizable3">
+                         <div class="img-box">
+                            <input type="checkbox" id="check3" class="check">
+                         </div>
+                         <div class="content-box">
+                             <p class="txt3">Customizable profile<span>Custom theme on your profile</span></p>
+                         </div>
+                         <div class="check-price check-price3">
+                             +$2/mo
+                         </div>
+                    </div>
+
+                    <div class="btns">
+                        <div class="go-back go-back2">
+                            Go back
+                        </div>
+                        <div class="btn-next btn-next3">
+                            Next Step
+                        </div>
+                    </div>
+                </div>
+
+                <!-- fourth form -->
+                <div class="form-box form-box4">
+                    <h3>Finishing up</h3>
+                    <p>Double-check everything looks OK before confirming.</p>
+                    <div class="finishing-up">
+                        <div class="box">
+                            <div class="roundup roundup1">
+                                <p class="total-service1">Arcade (Monthly)<span class="change"><a href="#">Change</a></span></p>
+                            </div>
+                            <div class="total-price11">
+                                $<span class="total-price1"></span>/mo
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="box box2">
+                            <div class="roundup">
+                                <p class="total-service2">Online service</p>
+                            </div>
+                            <div class="total-price">
+                                +$<span class="total-price2"></span>/mo
+                            </div>
+                        </div>
+                        <div class="box box3">
+                            <div class="roundup">
+                                <p class="total-service3">Larger storage</p>
+                            </div>
+                            <div class="total-price">
+                                +$<span class="total-price3"></span>/mo
+                            </div>
+                        </div>
+                        <div class="box box5">
+                            <div class="roundup">
+                                <p class="total-service5">Customizable profile</p>
+                            </div>
+                            <div class="total-price">
+                                +$<span class="total-price5"></span>/mo
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="box box4">
+                        <div class="roundup">
+                            <p class="total">Total(per month)</p>
+                        </div>
+                        <div class="total-price">
+                            +$<span class="total-price4"></span>/mo
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <div class="go-back go-back3">
+                            Go back
+                        </div>
+                        <div class="btn-next btn-next4">
+                            Confirm
+                        </div>
+                    </div>
+                </div>
+
+                <!-- fifth-page -->
+                <div class="form-box form-box5">
+                    <img src="images/icon-thank-you.svg" alt="">
+                    <h1>Thank you</h1>
+                    <p>
+                        Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>

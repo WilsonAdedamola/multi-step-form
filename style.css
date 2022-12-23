@@ -1,0 +1,536 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: ubuntu-bold;
+    src: url(fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family: ubuntu-medium;
+    src: url(fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: ubuntu-regular;
+    src: url(fonts/Ubuntu-Regular.ttf);
+}
+
+:root{
+    /* active-states */
+    --input-outline-color: hsl(243, 100%, 62%);
+    --input-outline-err: hsl(354, 84%, 57%);
+    --btn-next-step-hover: hsl(217, 100%, 97%);
+    --confirm-hover-state: hsl(228, 100%, 84%);
+    --Go-back-hover: hsl(213, 96%, 18%);
+    --input-bgcol: hsl(231, 100%, 99%);
+    --progress-numbers: hsl(206, 94%, 87%);
+
+    /* Non-active */
+    --input-texts-col: hsl(213, 96%, 18%);
+    --btn-next-step: hsl(213, 96%, 18%);
+    --prg-texts: hsl(231, 11%, 63%);
+    --step-number: hsl(229, 24%, 87%);
+    --body-bgcol: hsl(217, 100%, 97%);
+    
+    --sidebar-list:
+}
+.container{
+    background-color: var(--body-bgcol);
+    /* height: 100vh; */
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+}
+.clicked-plan{
+    outline: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
+}
+
+.sidebar-mobile{
+    width: 100%;
+}
+.sidebar-desktop, .count-text{
+    display: none;
+}
+.sidebar-step{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: -40%;
+}
+.count{
+    border: 1px solid var(--progress-numbers);
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--progress-numbers);
+    font-family: ubuntu-medium;
+}
+.count.active{
+    background-color: var(--progress-numbers);
+    color: black;
+}
+.form-box{
+    position: relative;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    margin: 40px 5%;
+    margin-bottom: 150px;
+    box-shadow: 0px 0px 45px -19px rgba(0,0,0,0.8);
+}
+.form-box1{
+    display: block;
+}
+.form-box h3{
+    font-family: ubuntu-bold;
+    color: var(--input-texts-col);
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+.form-box p{
+    font-family: ubuntu-regular;
+    color: var(--prg-texts);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+.form-box label{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: var(--input-texts-col);
+    font-family: ubuntu-regular;
+}
+.form-box .error{
+    color: var(--input-outline-err);
+    float: right;
+    font-family: ubuntu-medium;
+    display: none;
+}
+.input:focus{
+    outline: 1px solid hsl(243, 100%, 62%);
+}
+.form-box .input{
+    border: 1px solid var(--prg-texts);
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+}
+.form-box .input::placeholder{
+    color: var(--prg-texts);
+    font-family: ubuntu-medium;
+}
+
+.btn-next1{
+    position: absolute;
+    bottom: -210px;
+    right: 0px;
+    font-family: ubuntu-medium;
+    background-color: var(--btn-next-step);
+    border-radius: 5px;
+    padding: 15px 20px;
+    color: hsl(0, 0%, 100%);
+}
+
+.btn-next1:hover, .btn-next2:hover, .btn-next3:hover{
+    cursor: pointer;
+    background-color: hsl(213, 73%, 32%);
+}
+
+/* second form */
+.form-box2{
+    display: none;
+}
+.plan-box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--prg-texts);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+.plan-box:hover{
+    border-color: var(--input-outline-color);
+    cursor: pointer;
+}
+.plan-box p{
+    margin-top: 20px;
+    color: var(--input-texts-col);
+    font-family: ubuntu-medium;
+    font-size: 1.1em;
+}
+.plan-box p span{
+    display: block;
+    color: var(--prg-texts);
+    font-family: ubuntu-regular;
+}
+.form-box2{
+    margin-bottom: 10px;
+}
+.btn-next{
+    background-color: var(--btn-next-step);
+    border-radius: 5px;
+    padding: 15px 20px;
+    color: hsl(0, 0%, 100%);
+}
+.go-back{
+    color: var(--prg-texts);
+    cursor: pointer;
+}
+.go-back:hover{
+    color: var(--btn-next-step);
+}
+
+.toggle-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: var(--body-bgcol);
+    padding: 10px 0;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.toggle-box{
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    min-width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: var(--btn-next-step);
+}
+
+.toggle{
+    position: absolute;
+    right: 3px;
+    transform: translateY(13%);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.toggle.active{
+    left: 3px;
+}
+
+.duration1{
+    font-family: ubuntu-medium;
+    color: var(--btn-next-step);
+    font-size: 1.1em;
+}
+
+.duration2{
+    font-family: ubuntu-medium;
+    color: var(--prg-texts);
+    font-size: 1.1em;
+}
+
+.content-box .free{
+    margin-top: 5px;
+    color: var(--btn-next-step);
+    display: none;
+}
+
+.btns{
+    position: absolute;
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    left: 0;
+    bottom: -70px;
+    font-family: ubuntu-medium;
+    width: 100%;
+}
+
+/* third form */
+.form-box3{
+    display: none;
+    margin-bottom: 110px;
+}
+
+.add-ons3{
+    position: relative;
+    gap: 0;
+}
+
+.check-price{
+    position: absolute;
+    right: 10px;
+}
+
+.add-ons3 .img-box{
+    margin-right: 3%;
+}
+
+.check{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--prg-texts);
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+}
+.check::before{
+    position: absolute;
+    content: '\2713';
+    font-size: 15px;
+    line-height: 19px;
+    margin-left: 3px;
+    font-weight: bold;
+    transform: scale(0);
+    color: white;
+}
+.check:checked::before{
+    transform: scale(1);
+}
+.check:checked{
+    background-color: var(--input-outline-color);
+}
+.form-box3 .plan-box{
+    padding: 0 20px;
+}
+.form-box3 .btns{
+    bottom: -175px;
+}
+.check-price{
+    font-family: ubuntu-regular;
+    color: var(--input-outline-color)
+}
+
+/* fourth form */
+
+.form-box4{
+    display: none;
+    margin-bottom: 120px;
+}
+.form-box4 .btns{
+    bottom: -190px;
+}
+.finishing-up{
+    background-color: var(--body-bgcol);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: ubuntu-regular;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+.box2, .box3,.box5{
+    display: none;
+}
+.finishing-up span{
+    display: block;
+}
+.finishing-up .roundup1 p{
+    color: var(--btn-next-step);
+}
+.finishing-up span a{
+    color: var(--prg-texts);
+}
+.total-price1, .total-price2, .total-price3, .total-price4{
+    color: var(--btn-next-step);
+}
+.box4{
+    padding: 20px 20px;
+    font-family: ubuntu-regular;
+}
+hr{
+    margin-bottom: 10px;
+}
+.total-price span{
+    display: inline-block;
+}
+.total-price11 span, .total-price11{
+    display: inline-block;
+    font-family: ubuntu-bold;
+}
+.box4 .total-price{
+    font-family: ubuntu-bold;
+    font-size: 1.1em;
+    color: var(--input-outline-color);
+}
+.total-price4{
+    color: var(--input-outline-color);
+}
+.form-box4 .btns .btn-next4{
+    background-color: var(--input-outline-color);;
+}
+.form-box4 .btns .btn-next4:hover{
+    background-color: hsl(243, 75%, 67%);
+}
+
+/* fifth-page */
+.form-box5{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 240px;
+}
+.form-box5 img{
+    margin-top: 50px;
+}
+.form-box5 h1{
+    font-size: 1.8em;
+    font-family: ubuntu-bold;
+    color: var(--btn-next-step)
+}
+.form-box5 p{
+    text-align: center;
+    line-height: 25px;
+    margin-bottom: 50px;
+}
+
+@media(min-width:800px){
+    .form-container{
+        flex-direction: row;
+        background-color: white;
+        padding: 2%;
+        border-radius: 10px;
+        gap: 30px;
+    }
+
+    .form-box{
+    margin-bottom: 0;
+    background-color: transparent;
+    }
+
+    .container{
+        height: 100%;
+        padding: 5% 7%;
+    }
+
+    .sidebar-mobile{
+        display: none;
+    }
+    .sidebar-desktop, .count-text{
+        display: block;
+    }
+
+    .sidebar-desktop{
+        height: 100%;
+    }
+
+    .sidebar{
+        position: relative;
+    }
+
+    .sidebar-step{
+        position: absolute;
+        display: block;
+        top: 0;
+        margin-top: 0;
+        padding: 50px;
+    }
+
+    .steps{
+        display: flex;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .text1{
+        color: var(--prg-texts);
+        font-family: ubuntu-regular;
+    }
+
+    .text2{
+        display: block;
+        font-family: ubuntu-medium;
+        color: white;
+    }
+
+    .form-box{
+        position: relative;
+        padding: 20px;
+        margin: 0;
+        margin-bottom: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .form-box p{
+        font-family: ubuntu-regular;
+        color: var(--prg-texts);
+        width: auto;
+        margin-bottom: 25px;
+    }
+
+    .btn-next1{
+        position: absolute;
+        width: auto;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-family: ubuntu-medium;
+        background-color: var(--btn-next-step);
+        border-radius: 5px;
+        padding: 15px 20px;
+        color: hsl(0, 0%, 100%);
+    }
+
+    /* second form */
+
+    .form-box2 .plan-box{
+        display: inline-block;
+        width: 100%;
+    }
+
+    .form-box2 .grid{
+        display: flex;
+        gap: 15px;
+    }
+
+    .form-box2 .plan-box p{
+        margin-top: 50px;
+        margin-bottom: 0;
+        color: var(--input-texts-col);
+        font-family: ubuntu-medium;
+        font-size: 1.1em;
+    }
+
+    .grid .plan-box{
+        padding: 20px;
+    }
+
+    .form-box .btns{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    /* third form */
+
+    .form-box3 .plan-box p{
+        color: var(--input-texts-col);
+        font-family: ubuntu-medium;
+        font-size: 1.1em;
+    }
+
+    /* fifth page */
+
+    .form-box5 img{
+        margin-top: 0px;
+    }
+    
+}
