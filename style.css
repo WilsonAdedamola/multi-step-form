@@ -400,6 +400,21 @@ hr{
     margin-bottom: 50px;
 }
 
+.programmer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 10px 5px;
+    margin-top: 70px;
+}
+
+span.pname a{
+    font-size: .9rem;
+    color: green;
+    font-weight: bold;
+}
+
 @media(min-width:800px){
     .form-container{
         flex-direction: row;
@@ -533,4 +548,10 @@ hr{
         margin-top: 0px;
     }
     
+    .programmer{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-top: 0px;
+    }
 }
